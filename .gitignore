@@ -1,0 +1,9 @@
+# Ignorar el archivo que tiene mi contraseña de MySQL
+scripts/conexion_MySQL.py
+
+# Ignorar carpetas de caché de Python
+__pycache__/
+
+# Ignorar archivos temporales
+*.log
+.DS_Store
