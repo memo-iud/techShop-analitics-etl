@@ -75,7 +75,30 @@ VALUES
   ('2024-01-15', 2024, 1, 1, 3, 1, 0, 'Normal'),
   ('2024-02-14', 2024, 1, 2, 7, 3, 0, 'San Valentin'),
   ('2024-03-08', 2024, 1, 3, 10, 5, 0, 'Dia Mujer');
-  CALL LlenarDimTiempo2024();
+  -- Enero
+  ('2024-01-16', 2024, 1, 1,  3, 2, 0, 'Normal'),
+  ('2024-01-20', 2024, 1, 1,  3, 6, 0, 'Normal'),
+
+  -- Febrero
+  ('2024-02-15', 2024, 1, 2,  7, 4, 0, 'Normal'),
+  ('2024-02-20', 2024, 1, 2,  8, 2, 0, 'Normal'),
+  ('2024-02-28', 2024, 1, 2,  9, 3, 0, 'Normal'),
+
+  -- Marzo
+  ('2024-03-15', 2024, 1, 3, 11, 5, 0, 'Normal'),
+  ('2024-03-22', 2024, 1, 3, 12, 5, 0, 'Normal'),
+
+  -- Abril
+  ('2024-04-05', 2024, 2, 4, 14, 5, 0, 'Normal'),
+  ('2024-04-10', 2024, 2, 4, 15, 3, 0, 'Normal'),
+  ('2024-04-18', 2024, 2, 4, 16, 4, 0, 'Normal'),
+  ('2024-04-25', 2024, 2, 4, 17, 4, 0, 'Normal'),
+
+  -- Mayo
+  ('2024-05-10', 2024, 2, 5, 19, 5, 0, 'Normal'),
+  ('2024-05-12', 2024, 2, 5, 19, 7, 0, 'Normal'),
+  ('2024-05-15', 2024, 2, 5, 20, 3, 0, 'Normal');
+  -- CALL LlenarDimTiempo2024();
  
 -- Dimensión Canales
 INSERT INTO dim_canales (id_canal, nombre)
@@ -167,5 +190,14 @@ VALUES
   ('2024-02-28', 'SKU-002', 300, 200, 150),
   ('2024-02-28', 'SKU-006', 15,   20,  8);
   
+  
+-- Creamos la tabla para hacer la carga del scraping
+CREATE TABLE scraping_alkosto (
+    id_scraping    INT          AUTO_INCREMENT PRIMARY KEY,
+    producto_db    VARCHAR(100) NOT NULL,
+    nombre_alkosto VARCHAR(255) NOT NULL,
+    precio         INT          NOT NULL,
+    fecha_consulta DATE         DEFAULT (CURRENT_DATE) -- Se pone la fecha de hoy automáticamente
+);
 
 
