@@ -7,5 +7,7 @@ __pycache__/
 # Ignorar archivos temporales
 *.log
 .DS_Store
+
+# Ignorar entornos virtuales
 venv/
 env/

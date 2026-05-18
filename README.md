@@ -15,7 +15,8 @@ Este repositorio contiene la implementación de la **Etapa 3** (Preparación de 
 Se determinó que el modelo requiere tres fuentes de información:
 1.  **Histórico de Ventas:** (Datos internos).
 2.  **Catálogo de Productos:** Almacenado en la base de datos relacional `techshop_db`.
-3.  **Datos Externos (Competencia):** Precios en tiempo real de **Alkosto** y **Mercado Libre**, identificados como los competidores con mayor impacto en el flujo de caja de la compañía.
+3.  **Datos Externos (Competencia):** Precios en tiempo real de **Alkosto** 
+identificado como competidor con mayor impacto en el flujo de caja de la compañía.
 
 ---
 
@@ -23,8 +24,10 @@ Se determinó que el modelo requiere tres fuentes de información:
 En esta etapa, se desarrolló la infraestructura para la ingesta de datos externos que alimentarán el tablero de decisiones.
 
 ### Arquitectura de Archivos .py
-* **`scripts/scraping_alkosto.py`**: Implementación con **Selenium WebDriver**. Gestiona la búsqueda dinámica de los 10 productos estrella definidos en el inventario (Laptops, Monitores, Periféricos).
-* **`scripts/scraping_mer_libre.py`**: Scraper diseñado para capturar la variabilidad de precios en el marketplace de Mercado Libre.
+* **`scripts/scraping_alkosto.py`**: Implementación con **Selenium WebDriver**. Gestiona la búsqueda dinámica del 1 productos de el inventariode techshop, como prueba.
+* **`scripts/scraping_mi_catalogo_alkosto.py`**: Implementación con **Selenium WebDriver**. Gestiona la búsqueda dinámica de los 10 productos estrella definidos en el inventario (Laptops, Monitores, Periféricos).
+* **`scripts/scraping_mer_libre.py`**: Scraper diseñado para capturar la variabilidad de precios en el marketplace de Mercado Libre, Ip fue bloqueada arrojando 0 productos.
+* **`scripts/scraping_webscraper.py`**: Implementación con **BeautifulSoup**. Gestiona la búsqueda dinámica del 1 productos de el inventariode techshop, como prueba., ip fue bloqueada
 * **`scripts/conexion_MySQL.py`**: Módulo de conexión robusto que garantiza que cada dato extraído se vincule correctamente con el `ID` del producto en la base de datos de TechShop.
 
 ---
@@ -52,5 +55,6 @@ Durante el desarrollo se superaron obstáculos críticos de integración:
   **Base de Datos:** Ejecutar los scripts de la carpeta `/sql` para recrear el entorno.
 
 **Autores:** Guillermo Loaiza Mesa | Jaider Morales Bautista | Robinson Marin Morales| Aleicer Vesga Rueda 
+
 **Instructora:** Ana Maria Lopez Moreno  
 **Curso:** Programación para Análisis de Datos

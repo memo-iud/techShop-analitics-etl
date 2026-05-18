@@ -1,10 +1,10 @@
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
-from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 import pandas as pd
 import time
+
+# NOTA: Eliminamos webdriver_manager por completo para evitar el bloqueo del Firewall
 
 def scraping_masivo_techshop():
     productos_db_lista = [
@@ -24,7 +24,10 @@ def scraping_masivo_techshop():
     options.add_argument("--disable-blink-features=AutomationControlled")
     # options.add_argument("--headless") # Descomenta si no quieres ver la ventana abrirse
     
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+    # --- INICIO DE DRIVER NATIVO DE SELENIUM ---
+    # Al no usar ChromeDriverManager, no necesita descargar nada de internet al arrancar
+    driver = webdriver.Chrome(options=options)
+    
     resultados_finales = []
 
     try:
