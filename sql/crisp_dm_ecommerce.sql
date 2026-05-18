@@ -84,7 +84,6 @@ CREATE TABLE scraping_alkosto (
 -- ============================================================
 -- 4. INGESTIÓN DE DATOS (POBLAR TABLAS DE DIMENSIONES)
 -- ============================================================
-
 -- Dimensión Canales
 INSERT INTO dim_canales (id_canal, nombre)
 VALUES 
